@@ -42,8 +42,13 @@
             //$('p:even').css('background-color', 'red');
             //$('tr:first-child').css('background-color', 'yellow');
 
-
-
+            /****** INTERACTING WITH THE DOM ****************/
+            var html = '';
+            $('p.Joomla, p.Jacob').each(function(index) {
+               html += "<br />" + index + " " + $(this).text();
+            });
+            var output = $('#OutputDiv');
+            output.html(html);
         });
 
          </script>
@@ -51,11 +56,12 @@
     </head>
     <body>
         <div id="myContent">My Jquery enabled page!</div>
+        <div id="OutputDiv"></div>
         <div>
             <p class="Joomla">Paragraph 1</p>
             <p class="Jacob">Paragraph 2</p>
             <p class="Joomla">Paragraph 3</p>
-            <p>Paragraph 4</p>
+            <p class="Jacob">Paragraph 4</p>
             <div id="TestDiv">Testing div</div>
         </div>
         <a title="ProgrammingInfo">Programming stuff</a>
