@@ -21,8 +21,9 @@
 /*           $('div').each(function() {
                 alert($(this).html());
             }); */
-            var programmers = $('a[title="ProgrammingInfo"]');
-            alert(programmers.length);
+/*             var programmers = $('a[title="ProgrammingInfo"]');
+            alert(programmers.length); */
+
         });
 
          </script>
@@ -37,5 +38,26 @@
             <div id="TestDiv">Testing div</div>
         </div>
         <a title="ProgrammingInfo">Programming stuff</a>
+        <div>
+            <form id="form1">
+                <table style="width:300px;">
+                    <tr>
+                        <td style="width:30%">First Name</td>
+                        <td style="width:70%;"><input id="FirstNameTextBox" value="John"/></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input id="LastNameTextBox" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>Comments</td>
+                        <td><textarea rows="5" cols="60" id="CommentsTextBox"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input id="SubmitButton" type="Button" value="Submit" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </body>
 </html>
