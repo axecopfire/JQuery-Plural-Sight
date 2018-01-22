@@ -14,21 +14,36 @@
         }; */
 
         $(document).ready(function() {
-            $('#myContent').html('Hello World');
+
+
+            ///////******* SELECTOR TRAINING *************************//////////////////////
+/*             $('#myContent').html('Hello World');
             $('p').css('background-color', 'green');
             $('#TestDiv').html("Imma Testin this div");
             $(".Joomla", ".Jacob").css('background-color', 'red');
-/*           $('div').each(function() {
+          $('div').each(function() {
                 alert($(this).html());
-            }); */
-/*             var programmers = $('a[title="ProgrammingInfo"]');
-            alert(programmers.length); */
-/*             var inputs = $(':input');
-            alert($(inputs[0]).val()); */
-            $(':input').each(function() {
+            });
+            var programmers = $('a[title="ProgrammingInfo"]');
+            alert(programmers.length);
+            var inputs = $(':input');
+            alert($(inputs[0]).val());
+             $(':input').each(function() {
                 var elem = $(this);  // This is wrapped in a jquery wrapper
                 alert(elem.val('Foo'));
-            })
+            }) */
+
+            //** ADDITIONAL SELECTOR FEATURES **//
+            //^starts with
+            //$ ends with
+           // * contains
+            //alert($('div:contains("Paragraph")').html());
+            //$('p:odd').css('background-color', 'blue');
+            //$('p:even').css('background-color', 'red');
+            //$('tr:first-child').css('background-color', 'yellow');
+
+
+
         });
 
          </script>
@@ -40,6 +55,7 @@
             <p class="Joomla">Paragraph 1</p>
             <p class="Jacob">Paragraph 2</p>
             <p class="Joomla">Paragraph 3</p>
+            <p>Paragraph 4</p>
             <div id="TestDiv">Testing div</div>
         </div>
         <a title="ProgrammingInfo">Programming stuff</a>
