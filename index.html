@@ -23,7 +23,12 @@
             }); */
 /*             var programmers = $('a[title="ProgrammingInfo"]');
             alert(programmers.length); */
-
+/*             var inputs = $(':input');
+            alert($(inputs[0]).val()); */
+            $(':input').each(function() {
+                var elem = $(this);  // This is wrapped in a jquery wrapper
+                alert(elem.val('Foo'));
+            })
         });
 
          </script>
@@ -43,7 +48,7 @@
                 <table style="width:300px;">
                     <tr>
                         <td style="width:30%">First Name</td>
-                        <td style="width:70%;"><input id="FirstNameTextBox" value="John"/></td>
+                        <td style="width:70%;"><input id="FirstNameTextBox" value="John" type="text"/></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
@@ -51,7 +56,15 @@
                     </tr>
                     <tr>
                         <td>Comments</td>
-                        <td><textarea rows="5" cols="60" id="CommentsTextBox"></textarea></td>
+                        <td><textarea rows="5" cols="60" id="CommentsTextBox">text area</textarea></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="sel">
+                                <option value="AZ">AZ</option>
+                                <option value="CA" selected="true">CA</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td><input id="SubmitButton" type="Button" value="Submit" /></td>
