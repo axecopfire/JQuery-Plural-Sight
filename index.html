@@ -16,10 +16,13 @@
         $(document).ready(function() {
             $('#myContent').html('Hello World');
             $('p').css('background-color', 'green');
-            $('div').each(function() {
-                alert($(this).html());
-            });
             $('#TestDiv').html("Imma Testin this div");
+            $(".Joomla", ".Jacob").css('background-color', 'red');
+/*           $('div').each(function() {
+                alert($(this).html());
+            }); */
+            var programmers = $('a[title="ProgrammingInfo"]');
+            alert(programmers.length);
         });
 
          </script>
@@ -28,10 +31,11 @@
     <body>
         <div id="myContent">My Jquery enabled page!</div>
         <div>
-            <p>Paragraph 1</p>
-            <p>Paragraph 2</p>
-            <p>Paragraph 3</p>
+            <p class="Joomla">Paragraph 1</p>
+            <p class="Jacob">Paragraph 2</p>
+            <p class="Joomla">Paragraph 3</p>
             <div id="TestDiv">Testing div</div>
         </div>
+        <a title="ProgrammingInfo">Programming stuff</a>
     </body>
 </html>
