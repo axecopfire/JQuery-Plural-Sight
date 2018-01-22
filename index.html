@@ -43,12 +43,21 @@
             //$('tr:first-child').css('background-color', 'yellow');
 
             /****** INTERACTING WITH THE DOM ****************/
-            var html = '';
+/*             var html = '';
             $('p.Joomla, p.Jacob').each(function(index) {
                html += "<br />" + index + " " + $(this).text();
             });
             var output = $('#OutputDiv');
-            output.html(html);
+            output.html(html); */
+            $('p.Joomla, p.Jacob').each(function(index) {
+                this.title = "some title"; // Raw DOM object
+                $(this).attr('title', 'Some title 2'); // JQuery Object
+            });
+            $('p.Joomla, p.Jacob')
+            .attr({
+                title: 'some title 3',
+                //style: 'font-size:12px;background-color:yellow;'
+            }).css('background-color', 'yellow');
         });
 
          </script>
