@@ -87,8 +87,26 @@
 
         function WireEvents() {
             $('#SubmitButton').click(function() {
-                alert('Clicked Button');
+                var firstNameVal = $('#FirstNameTextBox').val();
+                var lastNameVal = $('#LastNameTextBox').val();
+                $('#DivOutput').text(firstNameVal + ' ' + lastNameVal);
             });
+
+            //Handle Select
+            $('.myInput').change(function() {
+                $(this).addClass('Highlight');
+            });
+
+            $('#myContent').mouseenter(function() {
+                $(this).toggleClass('Highlight');
+                $(this).css('cursor', 'pointer');
+            }).mouseleave(function() {
+                $(this).toggleClass('Highlight');
+            }).mouseup(function(e) {
+                alert($(e.target).attr('id'));
+                $(this).text('X: ' + e.pageX + ' Y: ' + e.pageY);
+            })
+
         }
 
          </script>
@@ -119,22 +137,24 @@
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td><input id="LastNameTextBox" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text" /></td>
+                        <td><input class="myInput" id="LastNameTextBox" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text" /></td>
                     </tr>
                     <tr>
                         <td>Comments</td>
-                        <td><textarea rows="5" cols="60" id="CommentsTextBox">text area</textarea></td>
+                        <td><textarea class="myInput" rows="5" cols="60" id="CommentsTextBox">text area</textarea></td>
                     </tr>
                     <tr>
                         <td>
-                            <select id="sel">
+                            <select id="stateSelect">
                                 <option value="AZ">AZ</option>
                                 <option value="CA" selected="true">CA</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td><input id="SubmitButton" type="Button" value="Submit" /></td>
+                        <td><input id="SubmitButton" type="Button" value="Submit" />
+                        <div id="DivOutput"></div>
+                    </td>
                     </tr>
                 </table>
             </form>
