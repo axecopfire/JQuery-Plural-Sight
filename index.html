@@ -2,12 +2,6 @@
     <head>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="jquery.js"><\/script>')</script>
-<!--         <script type="text/javascript">
-        $(document).ready(function(){
-            //Perform action
-        });
-        </script> -->
-
         <script>
 /*         window.onload = function() {
             alert('Window loaded');
@@ -49,7 +43,8 @@
             });
             var output = $('#OutputDiv');
             output.html(html); */
-            $('p.Joomla, p.Jacob').each(function(index) {
+
+/*             $('p.Joomla, p.Jacob').each(function(index) {
                 this.title = "some title"; // Raw DOM object
                 $(this).attr('title', 'Some title 2'); // JQuery Object
             });
@@ -57,16 +52,57 @@
             .attr({
                 title: 'some title 3',
                 //style: 'font-size:12px;background-color:yellow;'
-            }).css('background-color', 'yellow');
+            }).css('background-color', 'yellow'); */
+
+            /**** Modifying the DOM ******/
+/*             var myContent = $('#myContent');
+            myContent.append('<span style="background-color:green"> Appended Child 1 </span>');
+            myContent.prepend('<span style="background-color:green"> Prepended Child 1 </span>');
+
+            // Wrap
+            $('p:contains("Paragraph")').wrap('<div style="color:blue;" />');
+            $('.Joomla').wrap('<div "style=color:red;" />');
+            $('.parentWrapper').each(function() {
+                alert($(this).html());
+            });
+
+            // Remove
+            $('.parentWrapper').remove(); */
+
+            /**** Modifying CSS Classes ********/
+/*             .addClass()
+            .hasClass()
+            .removeClass()
+            .toggleClass()
+            $('p').addClass('ClassOne ClassTwo');
+            if($('p').hasClass('styleSpecific'));
+            $('p').removeClass('ClassOne ClassTwo');
+            $('#PhoneDetails').toggleClass('highlight'); */
+
+            // $('input[type="text"]').addClass('Highlight');
+
+            /******** HANDLING EVENTS ***********/
+            WireEvents();
         });
 
+        function WireEvents() {
+            $('#SubmitButton').click(function() {
+                alert('Clicked Button');
+            });
+        }
+
          </script>
+         <style>
+         .Highlight {
+             background-color: yellow;
+         }
+         </style>
 
     </head>
     <body>
         <div id="myContent">My Jquery enabled page!</div>
         <div id="OutputDiv"></div>
-        <div>
+        <div class="parentWrapper">
             <p class="Joomla">Paragraph 1</p>
             <p class="Jacob">Paragraph 2</p>
             <p class="Joomla">Paragraph 3</p>
@@ -79,11 +115,11 @@
                 <table style="width:300px;">
                     <tr>
                         <td style="width:30%">First Name</td>
-                        <td style="width:70%;"><input id="FirstNameTextBox" value="John" type="text"/></td>
+                        <td style="width:70%;"><input id="FirstNameTextBox" value="John" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text"/></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td><input id="LastNameTextBox" type="text" /></td>
+                        <td><input id="LastNameTextBox" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" type="text" /></td>
                     </tr>
                     <tr>
                         <td>Comments</td>
@@ -102,6 +138,19 @@
                     </tr>
                 </table>
             </form>
+<!--             <script type="text/javascript">
+            // Handle events the old-fashioned way
+            var button = document.getElementById('SubmitButton');
+            if (document.addEventListener) {
+                button.addEventListener('click', function() {
+                    alert('Clicked Button');
+                }, false);
+            } else {
+                button.attachEvent('onclick', function() {
+                    alert('clicked IE Button');
+                });
+            }
+            </script> -->
         </div>
     </body>
 </html>
